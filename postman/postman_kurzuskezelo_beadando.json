@@ -1,0 +1,141 @@
+{
+  "info": {
+    "name": "Spring Boot Kurzuskezel\u0151 Teszt",
+    "_postman_id": "abc12345-6789-0123-4567-abcdef987654",
+    "description": "Tesztk\u00e9r\u00e9sek a Spring Boot beadand\u00f3hoz",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. \u00daj user l\u00e9trehoz\u00e1sa",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1,\n    \"name\": \"Teszt Elek\",\n    \"email\": \"teszt@pelda.hu\",\n    \"active\": true,\n    \"registrationDate\": \"2024-06-01\",\n    \"courseIds\": []\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. User lek\u00e9rdez\u00e9se ID alapj\u00e1n",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Minden user list\u00e1z\u00e1sa",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. User friss\u00edt\u00e9se",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1,\n    \"name\": \"Teszt Elek M\\u00f3dos\\u00edtott\",\n    \"email\": \"modositott@pelda.hu\",\n    \"active\": false,\n    \"registrationDate\": \"2024-06-01\",\n    \"courseIds\": []\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. User t\u00f6rl\u00e9se",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. User sz\u0171r\u00e9s n\u00e9v szerint",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/users?name=Teszt%20Elek",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Teszt Elek"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
